@@ -57,7 +57,7 @@ export type SoundCloudOptions = {
 };
 
 export default function soundCloudSource(uw: unknown, opts: SoundCloudOptions) {
-  if (!opts || !opts.key) {
+  if (opts && !opts.key) {
     throw new TypeError('Expected a SoundCloud API key in "options.key". For information on how to '
       + 'configure your SoundCloud API access, see '
       + 'https://soundcloud.com/you/apps.');
